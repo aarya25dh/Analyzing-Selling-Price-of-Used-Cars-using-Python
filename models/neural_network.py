@@ -17,7 +17,7 @@ df = pd.read_csv("data/processed/car_new_details.csv")
 
 # target is the price, features are everything else
 y = df["Price"]
-X = df.drop(columns=["Price", "Model", "Location", "Car_Age"])
+X = df.drop(columns=["Price", "Model", "Location", "Owner"])
 
 # grouping the columns by how they need to be prepared
 categorical_columns = [

@@ -11,7 +11,7 @@ from sklearn.preprocessing import OneHotEncoder
 df = pd.read_csv("data/processed/car_new_details.csv")
 
 # drop the columns that are not needed 
-df = df.drop(columns=["Model", "Location", "Owner", "Year", "Kilometer"])
+df = df.drop(columns=["Model", "Location", "Owner"])
 
 # target is the price, features are everything else
 X = df.drop(columns=["Price"])

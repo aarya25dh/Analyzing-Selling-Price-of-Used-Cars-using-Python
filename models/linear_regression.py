@@ -9,7 +9,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 class LinearRegression:
     def __init__(self, learning_rate=0.05, n_iterations=3000, alpha=10):
-        self.alpha = alpha  # strength of the L2 penalty (keeps weights small)
+        self.alpha = alpha  # strength of the L2 penalty 
         self.learning_rate = learning_rate  # size of each update step
         self.n_iterations = n_iterations  # how many times we update
         self.weights = None
@@ -67,7 +67,7 @@ df = pd.read_csv("data/processed/car_new_details.csv")
 
 # target is the price, features are everything else
 y = df["Price"]
-X = df.drop(columns=["Price", "Model", "Location", "Car_Age"])
+X = df.drop(columns=["Price", "Model", "Location", "Owner"])
 
 # grouping the columns by how they need to be prepared
 # categorical columns are text so we encode it and numerical columns are numbers so we scale it
@@ -94,6 +94,7 @@ numerical_columns = [
     "Fuel Tank Capacity",
     "Kilometers_Per_Year",
     "Owner_Count",
+    "Car_Age",
 ]
 
 binary_columns = ["Unregistered"]
